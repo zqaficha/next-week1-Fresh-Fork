@@ -1,3 +1,5 @@
+export const instant = false;
+
 type Recipe = {
   id: number;
   name: string;
@@ -8,7 +10,7 @@ type Recipe = {
 };
 
 export default async function Home() {
-  const res = await fetch("https://dummyjson.com/recipes?limit=9");
+  const res = await fetch("https://dummyjson.com/recipes");
   const data = await res.json();
   const recipes: Recipe[] = data.recipes;
   return (
